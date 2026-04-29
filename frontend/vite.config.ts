@@ -13,7 +13,7 @@ export default defineConfig({
         name: 'DentGO',
         short_name: 'DentGO',
         description: 'Gestión institucional odontológica',
-        theme_color: '#004a99',
+        theme_color: '#0099a8',
         icons: [
           {
             src: 'pwa-192x192.png',

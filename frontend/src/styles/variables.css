@@ -1,25 +1,37 @@
 :root {
-  /* Colors */
-  --color-primary: #004a99; /* Institutional Blue */
-  --color-secondary: #00a0df; /* Lighter Blue */
-  --color-accent: #f2a900; /* Institutional Gold/Yellow */
-  --color-success: #28a745;
-  --color-error: #dc3545;
-  --color-warning: #ffc107;
-  --color-info: #17a2b8;
+  /* Colors - UAM Branding (Fixed) */
+  --color-primary: rgba(0, 153, 168, 1);
+  --color-secondary: rgba(0, 153, 168, 0.85);
+  --color-accent: #f2a900;
+  
+  /* Semantic Colors - Base */
+  --color-success: #1a8a71;
+  --color-error: #d32f2f;
+  --color-warning: #ffa000;
+  --color-info: #007681;
 
-  /* Neutrals */
-  --color-white: #ffffff;
-  --color-gray-100: #f8f9fa;
-  --color-gray-200: #e9ecef;
-  --color-gray-300: #dee2e6;
-  --color-gray-400: #ced4da;
-  --color-gray-500: #adb5bd;
-  --color-gray-600: #6c757d;
-  --color-gray-700: #495057;
-  --color-gray-800: #343a40;
-  --color-gray-900: #212529;
-  --color-black: #000000;
+  /* Neutrals - Raw Palette */
+  --raw-white: #ffffff;
+  --raw-black: #000000;
+  --raw-gray-100: #f8f9fa;
+  --raw-gray-200: #e9ecef;
+  --raw-gray-300: #dee2e6;
+  --raw-gray-400: #ced4da;
+  --raw-gray-500: #adb5bd;
+  --raw-gray-600: #6c757d;
+  --raw-gray-700: #495057;
+  --raw-gray-800: #343a40;
+  --raw-gray-900: #212529;
+
+  /* Theme-aware Semantic Variables (Light Default) */
+  --bg-primary: var(--raw-white);
+  --bg-secondary: var(--raw-gray-100);
+  --bg-card: var(--raw-white);
+  --text-primary: var(--raw-gray-900);
+  --text-secondary: var(--raw-gray-600);
+  --text-on-primary: var(--raw-white);
+  --border-color: var(--raw-gray-200);
+  --shadow-color: rgba(0, 0, 0, 0.1);
 
   /* Typography */
   --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -41,8 +53,8 @@
 
   /* Layout */
   --border-radius: 8px;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 2px var(--shadow-color);
+  --shadow-md: 0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px var(--shadow-color);
   --header-height: 60px;
   --bottom-nav-height: 56px;
   --sidebar-width: 260px;
@@ -52,4 +64,19 @@
   --z-bottom-nav: 1000;
   --z-sidebar: 1000;
   --z-modal: 2000;
+}
+
+[data-theme='dark'] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-card: #1e1e1e;
+  --text-primary: #f8f9fa;
+  --text-secondary: #adb5bd;
+  --text-on-primary: #ffffff;
+  --border-color: #333333;
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  
+  /* Semantic adjustments for dark */
+  --color-success: #26a69a;
+  --color-info: #26c6da;
 }

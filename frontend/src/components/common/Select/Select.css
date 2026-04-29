@@ -12,7 +12,7 @@
 .select-label {
   font-size: var(--font-size-sm);
   font-weight: 600;
-  color: var(--color-gray-700);
+  color: var(--text-primary);
 }
 
 .select-wrapper {
@@ -24,19 +24,20 @@
 .select {
   width: 100%;
   padding: 12px var(--spacing-md);
-  padding-right: var(--spacing-xl); /* Space for custom arrow */
+  padding-right: var(--spacing-xl);
   font-size: 16px;
-  border: 1px solid var(--color-gray-300);
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  background-color: var(--color-white);
-  appearance: none; /* Hide native arrow */
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  appearance: none;
   cursor: pointer;
 }
 
 .select:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(0, 74, 153, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 153, 168, 0.1);
 }
 
 .select--error {
@@ -48,7 +49,7 @@
   right: var(--spacing-md);
   pointer-events: none;
   font-size: 10px;
-  color: var(--color-gray-500);
+  color: var(--text-secondary);
 }
 
 .select-error-text {

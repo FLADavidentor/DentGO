@@ -11,6 +11,7 @@ import './DevPage.css';
 const DevPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { theme, setTheme } = useThemeContext();
+  const [selectValue, setSelectValue] = useState<string | number>('');
 
   const colors = [
     { name: 'Primary', var: 'var(--color-primary)' },
@@ -126,11 +127,13 @@ const DevPage: React.FC = () => {
           <Input label="Numeric (Mobile Keyboard)" inputMode="numeric" pattern="[0-9]*" placeholder="12345678" />
           <Input label="With Error State" error="This field is required" defaultValue="Wrong value" />
           <Select 
-            label="Single Selection Dropdown"
+            label="Adaptive Select (Bottom Sheet)"
+            value={selectValue}
+            onChange={setSelectValue}
             options={[
-              { value: '1', label: 'Option One' },
-              { value: '2', label: 'Option Two' },
-              { value: '3', label: 'Option Three' },
+              { value: '1', label: 'Opción Institucional A' },
+              { value: '2', label: 'Opción Institucional B' },
+              { value: '3', label: 'Opción Institucional C' },
             ]}
           />
         </div>

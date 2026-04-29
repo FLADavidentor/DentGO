@@ -15,41 +15,76 @@
   color: var(--text-primary);
 }
 
-.select-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.select {
+/* Trigger (The "Select" Field) */
+.select-trigger {
   width: 100%;
   padding: 12px var(--spacing-md);
-  padding-right: var(--spacing-xl);
   font-size: 16px;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   background-color: var(--bg-card);
   color: var(--text-primary);
-  appearance: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.select:focus {
+.select-trigger:focus {
   outline: none;
   border-color: var(--color-primary);
   box-shadow: 0 0 0 3px rgba(0, 153, 168, 0.1);
 }
 
-.select--error {
+.select-trigger--error {
   border-color: var(--color-error);
 }
 
-.select-arrow {
-  position: absolute;
-  right: var(--spacing-md);
-  pointer-events: none;
+.select-trigger--placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.select-trigger__icon {
   font-size: 10px;
   color: var(--text-secondary);
+}
+
+/* Options List (Inside Modal/Bottom Sheet) */
+.select-options-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-option-item {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--font-size-base);
+  color: var(--text-primary);
+  transition: background-color 0.2s;
+}
+
+.select-option-item:last-child {
+  border-bottom: none;
+}
+
+.select-option-item:active {
+  background-color: var(--bg-secondary);
+}
+
+.select-option-item--selected {
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: rgba(0, 153, 168, 0.05);
+}
+
+.select-option-item__check {
+  font-weight: bold;
 }
 
 .select-error-text {
@@ -59,7 +94,7 @@
 }
 
 @media (max-width: 600px) {
-  .select {
+  .select-trigger {
     padding: 14px var(--spacing-md);
   }
 }

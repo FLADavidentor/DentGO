@@ -1,0 +1,41 @@
+.student-dashboard__header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.student-dashboard__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.appointment-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.appointment-card__date {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+.appointment-card__body {
+  margin-bottom: var(--spacing-md);
+}
+
+.appointment-card__body h3 {
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.appointment-card__actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+@media (max-width: 480px) {
+  .appointment-card__actions {
+    flex-direction: column;
+  }
+}

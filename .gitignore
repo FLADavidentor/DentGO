@@ -25,6 +25,8 @@ frontend/build_log.txt
 
 # Worktrees
 .worktrees/
+docs/
+starter.test
 Thumbs.db
 
 # Editor

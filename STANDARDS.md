@@ -31,7 +31,18 @@
 - **ARIA:** Use `aria-label` for icon-only buttons.
 - **Contrast:** Ensure all text meets WCAG AA contrast standards (Institutional Blue on Gray-100 is safe).
 
+## 🏗️ Backend Architecture (Spring Boot)
+- **Layering:** Controller → Service (Interface) → ServiceImpl → Repository.
+- **DTOs:** Use Java `record` for all API Request/Response. Never expose Entities.
+- **Persistence:**
+    - Avoid N+1: Use `@EntityGraph` or `JOIN FETCH` for associations.
+    - Consistency: Implement `equals` and `hashCode` using business keys or UUIDs.
+    - Versioning: Use `@Version` for optimistic locking and data integrity.
+- **Auth:** Stateless JWT. Passwordless flows prefer OTP via Email/SMS.
+- **Real-time:** Use STOMP over WebSockets for global/event-driven updates.
+
 ## 🛠️ Development Workflow
+...
 - **Clean Build:** The project must build without errors or warnings at all times.
 - **Mock-Driven:** Use mocks in `services/mocks` for UI development until backend integration.
 - **Verification:** Test every component in the `/dev` gallery before deploying to feature pages.

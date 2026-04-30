@@ -1,0 +1,54 @@
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: dentgo-db
+    environment:
+      POSTGRES_DB: dentgo
+      POSTGRES_USER: ${DB_USER:-dentgo}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-dentgo123}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - dentgo-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    container_name: dentgo-backend
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/dentgo
+      SPRING_DATASOURCE_USERNAME: ${DB_USER:-dentgo}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASSWORD:-dentgo123}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - dentgo-network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: dentgo-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - dentgo-network
+
+networks:
+  dentgo-network:
+    driver: bridge
+
+volumes:
+  postgres-data:

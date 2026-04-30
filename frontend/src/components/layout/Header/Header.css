@@ -6,8 +6,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--spacing-md);
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   z-index: var(--z-header);
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);

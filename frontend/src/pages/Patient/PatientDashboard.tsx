@@ -4,6 +4,7 @@ import Card from '../../components/common/Card/Card';
 import Button from '../../components/common/Button/Button';
 import Badge from '../../components/common/Badge/Badge';
 import Modal from '../../components/common/Modal/Modal';
+import Price from '../../components/common/Price/Price';
 import './PatientDashboard.css';
 
 const PatientDashboard: React.FC = () => {
@@ -29,7 +30,7 @@ const PatientDashboard: React.FC = () => {
             >
               <p className="procedure-card__desc">{proc.description}</p>
               <div className="procedure-card__footer">
-                <span className="procedure-card__price">${proc.price}</span>
+                <Price amount={proc.price} size="md" className="procedure-card__price" />
                 {proc.available ? (
                   <Badge status="confirmed" label="Disponible" />
                 ) : (
@@ -50,7 +51,7 @@ const PatientDashboard: React.FC = () => {
           <div className="proc-detail">
             <p className="proc-detail__desc">{selectedProc.description}</p>
             <div className="proc-detail__info">
-              <span>Precio estimado: <strong>${selectedProc.price}</strong></span>
+              <span>Precio estimado: <Price amount={selectedProc.price} size="lg" /></span>
               <span>Programa: <strong>{selectedProc.program}</strong></span>
             </div>
             

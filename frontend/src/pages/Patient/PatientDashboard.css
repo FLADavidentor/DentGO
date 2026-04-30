@@ -41,9 +41,7 @@
 }
 
 .procedure-card__price {
-  font-weight: bold;
-  font-size: var(--font-size-lg);
-  color: var(--color-gray-900);
+  /* margin-right or specific layout if needed */
 }
 
 /* Modal Details */

@@ -22,7 +22,9 @@ frontend/build_log.txt
 .env.production.local
 
 # OS
-.DS_Store
+
+# Worktrees
+.worktrees/
 Thumbs.db
 
 # Editor

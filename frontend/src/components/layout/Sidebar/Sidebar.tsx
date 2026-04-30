@@ -1,11 +1,12 @@
 import React from 'react';
+import LogoLockup from '../../common/Logo/LogoLockup';
 import './Sidebar.css';
 
 const Sidebar: React.FC = () => {
   return (
     <aside className="sidebar">
       <div className="sidebar__header">
-        <h2>DentGO</h2>
+        <LogoLockup size="md" secondaryLogos={['/logos/universidad_americana_2020.webp']} />
       </div>
       <nav className="sidebar__nav">
         <a href="#" className="sidebar__link sidebar__link--active">

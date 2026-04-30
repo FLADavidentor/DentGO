@@ -83,6 +83,12 @@
   background-color: rgba(0, 153, 168, 0.05);
 }
 
+@media (hover: hover) {
+  .select-option-item:hover:not(.select-option-item--selected) {
+    background-color: var(--bg-secondary);
+  }
+}
+
 .select-option-item__check {
   font-weight: bold;
 }

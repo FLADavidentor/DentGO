@@ -4,49 +4,81 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: var(--z-modal);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(8px); /* Increased blur for polish */
+  transition: opacity 0.3s ease;
 }
 
 .modal-container {
   background-color: var(--bg-card);
   width: 90%;
   max-width: 500px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow-md);
+  border-radius: 16px; /* Smoother corners */
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   max-height: 90vh;
   color: var(--text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-handle {
+  display: none; /* Desktop hidden */
 }
 
 .modal-header {
   padding: var(--spacing-md);
   border-bottom: 1px solid var(--border-color);
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px; /* Equal columns for perfect centering */
   align-items: center;
+}
+
+.modal-header__spacer {
+  width: 40px;
 }
 
 .modal-title {
   font-size: var(--font-size-lg);
   color: var(--color-primary);
+  font-weight: 700;
+  margin: 0;
 }
 
-.modal-close {
-  font-size: 20px;
-  color: var(--text-secondary);
-  cursor: pointer;
-  padding: 5px;
+.modal-title--center {
+  text-align: center;
+}
+
+.modal-close-btn {
+  justify-self: end;
+  background-color: rgba(var(--color-primary-rgb), 0.1);
+  color: var(--color-primary);
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: var(--color-primary);
+  color: var(--text-on-primary);
+  transform: scale(1.05);
+}
+
+.modal-close-btn:active {
+  transform: scale(0.95);
 }
 
 .modal-content {
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   overflow-y: auto;
+}
+
+.modal-content--center {
+  text-align: center;
 }
 
 /* Mobile: Bottom Sheet Behavior */
@@ -58,12 +90,32 @@
   .modal-container {
     width: 100%;
     max-width: none;
-    border-radius: 16px 16px 0 0;
-    animation: slideUp 0.3s ease-out;
+    border-radius: 24px 24px 0 0;
+    animation: sheetUp 0.4s cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  .modal-handle {
+    display: block;
+    width: 36px;
+    height: 4px;
+    background-color: var(--border-color);
+    border-radius: 2px;
+    margin: 12px auto 0;
+    opacity: 0.8;
+  }
+
+  .modal-header {
+    grid-template-columns: 1fr; /* Single column for centered title */
+    padding-top: var(--spacing-sm);
+  }
+
+  .modal-header__spacer,
+  .modal-close-btn {
+    display: none;
   }
 }
 
-@keyframes slideUp {
+@keyframes sheetUp {
   from { transform: translateY(100%); }
   to { transform: translateY(0); }
 }

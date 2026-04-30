@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header Verdict Preview</title>
+    <style>
+        :root {
+            --color-primary: #0099a8;
+            --color-primary-rgb: 0, 153, 168;
+            --text-primary: #333;
+            --text-secondary: #666;
+            --bg-card: #fff;
+            --border-color: #eee;
+        }
+        body { font-family: sans-serif; background: #f4f7f6; display: flex; flex-direction: column; gap: 40px; padding: 40px; }
+        .preview-label { font-weight: bold; margin-bottom: 10px; color: var(--text-secondary); text-transform: uppercase; font-size: 12px; }
+        
+        .header-mock { 
+            background: var(--bg-card); 
+            height: 60px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 0 20px; 
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Desktop Style */
+        .desktop-header { width: 800px; }
+        .breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-secondary); }
+        .breadcrumb span:last-child { color: var(--color-primary); font-weight: 600; }
+        .logo { font-weight: 800; color: var(--color-primary); margin-right: 20px; font-size: 18px; }
+
+        /* Mobile Style */
+        .mobile-header { width: 375px; }
+        .back-btn { display: flex; align-items: center; gap: 5px; color: var(--color-primary); font-size: 14px; font-weight: 600; }
+        .page-title { font-weight: 700; font-size: 16px; position: absolute; left: 50%; transform: translateX(-50%); }
+
+        .actions { display: flex; align-items: center; gap: 15px; }
+        .icon { width: 24px; height: 24px; background: #eee; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative; }
+        .badge { position: absolute; top: -2px; right: -2px; width: 8px; height: 8px; background: #f2a900; border-radius: 50%; border: 2px solid white; }
+        .avatar { width: 32px; height: 32px; background: rgba(0,153,168,0.1); border: 2px solid var(--color-primary); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; color: var(--color-primary); }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="preview-label">Desktop View (SaaS Dashboard Mode)</div>
+        <div class="header-mock desktop-header">
+            <div style="display: flex; align-items: center;">
+                <div class="logo">DentGO</div>
+                <div class="breadcrumb">
+                    <span>Inicio</span> / <span>Procedimientos</span> / <span>Detalle</span>
+                </div>
+            </div>
+            <div class="actions">
+                <div class="icon"><span style="font-size: 12px;">🔔</span><div class="badge"></div></div>
+                <div class="avatar">JC</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="position: relative;">
+        <div class="preview-label">Mobile View (Native App Mode)</div>
+        <div class="header-mock mobile-header">
+            <div class="back-btn">
+                <span style="font-size: 18px;">‹</span> Atrás
+            </div>
+            <div class="page-title">Procedimientos</div>
+            <div class="actions">
+                <div class="icon"><span style="font-size: 12px;">🔔</span><div class="badge"></div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

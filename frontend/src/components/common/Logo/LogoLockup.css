@@ -1,0 +1,67 @@
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  user-select: none;
+}
+
+.logo-lockup__main {
+  position: relative;
+  height: 48px;
+  width: auto;
+  min-width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.logo-lockup__symbol-img {
+  height: 100%;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
+
+.logo-lockup__badges {
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.logo-lockup__badge {
+  height: 20px;
+  width: auto;
+  min-width: 20px;
+  background-color: var(--bg-card);
+  border: 1.5px solid var(--color-primary);
+  border-radius: 4px;
+  padding: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-sm);
+  margin-left: -10px; /* Adjust stacking for wider badges */
+  transition: transform 0.2s;
+}
+
+.logo-lockup__badge:hover {
+  transform: translateY(-2px);
+  z-index: 20 !important;
+}
+
+.logo-lockup__badge img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Sizes */
+.logo-lockup--sm .logo-lockup__main { height: 32px; min-width: 32px; }
+.logo-lockup--sm .logo-lockup__badge { height: 14px; min-width: 14px; bottom: -2px; right: -2px; margin-left: -8px; }
+
+.logo-lockup--lg .logo-lockup__main { height: 64px; min-width: 64px; }
+.logo-lockup--lg .logo-lockup__badge { height: 26px; min-width: 26px; bottom: -6px; right: -6px; margin-left: -12px; }

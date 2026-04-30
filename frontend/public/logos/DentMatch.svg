@@ -1,0 +1,36 @@
+<svg width="260" height="108" viewBox="7 10 160 66" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DentMatch logo">
+  <defs>
+    <linearGradient id="dentmatchGrad" x1="8" y1="8" x2="68" y2="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14B8A6"></stop>
+      <stop offset="100%" stop-color="#2563EB"></stop>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(10 12)">
+    <path d="M28 3
+         C17 3 9 11 9 23
+         C9 36 15 48 21 55
+         C24 59 28 57 29 52
+         L31 42
+         C32 37 38 37 39 42
+         L41 52
+         C42 57 46 59 49 55
+         C55 48 61 36 61 23
+         C61 11 39 3 28 3Z" fill="none" stroke="url(#dentmatchGrad)" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"></path>
+
+    <path d="M24 33 L36 26 L48 34" fill="none" stroke="#2563EB" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
+    <circle cx="24" cy="33" r="3.2" fill="#2563EB"></circle>
+    <circle cx="36" cy="26" r="3.2" fill="#14B8A6"></circle>
+    <circle cx="48" cy="34" r="3.2" fill="#2563EB"></circle>
+  </g>
+
+  <text x="86" y="49" font-family="Avenir Next, Nunito Sans, Inter, Arial, sans-serif" font-size="32" font-weight="600" letter-spacing="-0.8" fill="#0F172A">
+    Dent
+  </text>
+
+  <g transform="translate(158 28) rotate(90)">
+    <text font-family="Avenir Next, Nunito Sans, Inter, Arial, sans-serif" font-size="15" font-weight="750" letter-spacing="-1.1" fill="#2563EB">
+      Match
+    </text>
+  </g>
+</svg>

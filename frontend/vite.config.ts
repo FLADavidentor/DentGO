@@ -10,8 +10,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: 'DentGO',
-        short_name: 'DentGO',
+        name: 'DentMatch',
+        short_name: 'DentMatch',
         description: 'Gestión institucional odontológica',
         theme_color: '#0099a8',
         icons: [

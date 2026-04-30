@@ -1,0 +1,31 @@
+.price {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: var(--font-family-base);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.price__currency {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  margin-right: 2px;
+}
+
+.price__integer {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.price__decimals {
+  font-size: 0.75em;
+  font-style: italic;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Sizes */
+.price--sm { font-size: var(--font-size-sm); }
+.price--md { font-size: var(--font-size-base); }
+.price--lg { font-size: var(--font-size-xl); }

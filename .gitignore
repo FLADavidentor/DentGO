@@ -41,3 +41,7 @@ Thumbs.db
 # TypeScript
 *.tsbuildinfo
 frontend/*.tsbuildinfo
+
+# Windows NTFS downloaded-file metadata
+*:Zone.Identifier
+Zone.Identifier
